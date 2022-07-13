@@ -1,0 +1,52 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+  server1:
+    image: server
+    environment:
+      - APP=service
+    ports:
+      - "9081:5000"
+    networks:
+      - app-network
+  server2:
+    image: server
+    environment:
+      - APP=service
+    ports:
+      - "9082:5000"
+    networks:
+      - app-network
+  server3:
+    image: server
+    environment:
+      - APP=service
+    ports:
+      - "9083:5000"
+    networks:
+      - app-network
+  server4:
+    image: server
+    environment:
+      - APP=service
+    ports:
+      - "9084:5000"
+    networks:
+      - app-network
+  server5:
+    image: server
+    environment:
+      - APP=service
+    ports:
+      - "9085:5000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
